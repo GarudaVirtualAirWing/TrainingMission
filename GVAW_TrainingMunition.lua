@@ -173,6 +173,9 @@ function StrafeOSD21:OnAfterStrafeResult(From, Event, To, Player, Result)
     local result = Result
 end
 
+--[[
+--- AIRBOSS DISABLED 15/04/2024
+
 -- Create AIRBOSS object for GVAW GCVW 74
 local AirbossGVAW=AIRBOSS:New("GCVW 74")
 AirbossGVAW:Load()
@@ -264,6 +267,6 @@ function AirbossLHA:OnAfterLSOGrade(From, Event, To, playerData, grade)
     local score = tonumber(Grade.points)
     local name = tostring(PlayerData.name)
 end
-
+]]--
 
 env.info( '*** GVAW TRAINING MUNITION MISSION SCRIPT END ***' )
