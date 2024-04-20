@@ -210,6 +210,7 @@ ctld.pickupZones = {
     { "incirlik", "none", -1, "yes", 0 },
     { "adana", "none", -1, "yes", 0 },
     { "gazipasa", "none", -1, "yes", 0 },
+    { "herzliya", "none", -1, "yes", 0 },
     
     { "USA Carrier", "blue", 10, "yes", 0, 1001 }, -- instead of a Zone Name you can also use the UNIT NAME of a ship
 }
