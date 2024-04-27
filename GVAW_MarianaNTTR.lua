@@ -23,6 +23,7 @@ local FDMRange = {"R7201A", "R7201B", "R7201C", "R7201D"}
 local StrafeFDM = {"R7201Strafe-1", "R7201Strafe-2", "R7201Strafe-3"}
 FDMRangeZone = RANGE:New("Faralon de Medinilla")
     FDMRangeZone:SetRangeZone(ZONE:New("FDM"))
+    FDMRangeZone:SetFunkManOn()
     FDMRangeZone:SetScoreBombDistance(200)
     FDMRangeZone:AddBombingTargets( FDMRange, 30)
     FDMRangeZone:AddStrafePit(StrafeFDM, 5000, 1000, nil, false, 20, 0)
@@ -47,6 +48,7 @@ local AguijanRange = {"AguijanBC"}
 local StrafeAguijan = {"AguijanStrafe-1", "AguijanStrafe-2", "AguijanStrafe-3"}
 AguijanRangeZone = RANGE:New("Aguijan Range")
     AguijanRangeZone:SetRangeZone(ZONE:New("Aguijan"))
+    AguijanRangeZone:SetFunkManOn()
     AguijanRangeZone:SetScoreBombDistance(200)
     AguijanRangeZone:AddBombingTargets( AguijanRange, 30)
     AguijanRangeZone:AddStrafePit(StrafeAguijan, 5000, 1000, nil, false, 20, 0)
