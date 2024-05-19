@@ -530,23 +530,52 @@ end)
 :SpawnFromVec3(spawncoordBVR)
 end
 
+-------------------------------------------------------------------------
+-------------------------REMOVE AI---------------------------------------
+-------------------------------------------------------------------------
+
+function RemoveACMUnits()
+    local unitsToRemove = SET_GROUP:New():FilterPrefixes("enemytarget"):FilterStart()
+    unitsToRemove:ForEachGroup(function(group)
+        if group:IsAlive() then
+            group:Destroy()
+        end
+    end)
+    MESSAGE:New("All ACM Bandit have been removed.", 10):ToAll()
+end
+
+function RemoveBVRUnits()
+    local unitsToRemove = SET_GROUP:New():FilterPrefixes("enemytarget"):FilterStart()
+    unitsToRemove:ForEachGroup(function(group)
+        if group:IsAlive() then
+            group:Destroy()
+        end
+    end)
+    MESSAGE:New("All BVR Bandit aircraft have been removed.", 10):ToAll()
+end
 
 -----------------------------------------------------------------------------
 -----------------------------CREATE MENUS------------------------------------
 -----------------------------------------------------------------------------
 
 function A2GInstructions ()
-MESSAGE:New("USE MARKERS ON F10 MAP FOR A2G TRAINING. THE FOLLOWING OPTIONS ARE AVAILABLE: SEAD, BAI, CAS, STRIKE, PATROL", 10):ToAll()
-end
+	MESSAGE:New("USE MARKERS ON F10 MAP FOR A2G TRAINING. THE FOLLOWING OPTIONS ARE AVAILABLE: SEAD, BAI, CAS, STRIKE, PATROL", 10):ToAll()
+end	
 
 A2Amenu = MENU_COALITION:New(coalition.side.BLUE, "AERIAL TRAINING")
 ACMOptions = MENU_COALITION:New(coalition.side.BLUE, "ACM TRAINING", A2Amenu )
+RemoveACMBVR = MENU_COALITION:New(coalition.side.BLUE, "REMOVE BANDIT", A2Amenu)
+
+RemoveACMCommand = MENU_COALITION_COMMAND:New(coalition.side.BLUE, "REMOVE ACM BANDIT", RemoveACMBVR, RemoveACMUnits)
+RemoveBVRCommand = MENU_COALITION_COMMAND:New(coalition.side.BLUE, "REMOVE BVR BANDIT", RemoveACMBVR, RemoveBVRUnits)
+
 
 StartDogFight = MENU_COALITION_COMMAND:New(coalition.side.BLUE, "Abeam", ACMOptions, StartABEAMDogFight)
 StartDogFight = MENU_COALITION_COMMAND:New(coalition.side.BLUE, "Defensive", ACMOptions, StartDefensiveDogFight)
 StartDogFight = MENU_COALITION_COMMAND:New(coalition.side.BLUE, "Head to Head", ACMOptions, StartH2HDogFight)
-StartDogFight = MENU_COALITION_COMMAND:New(coalition.side.BLUE, "BEYOND VISUAL RANGE", A2Amenu, StartBVR)
 
+StartDogFight = MENU_COALITION_COMMAND:New(coalition.side.BLUE, "BEYOND VISUAL RANGE", A2Amenu, StartBVR)
+	
 A2GMENU = MENU_COALITION_COMMAND:New(coalition.side.BLUE, "SURFACE TRAINING",nil, A2GInstructions) 
 
 --------------------------
