@@ -301,6 +301,7 @@ end
 
 function A2GInstructions ()
     MESSAGE:New("USE MARKERS ON F10 MAP FOR A2G TRAINING. THE FOLLOWING OPTIONS ARE AVAILABLE: SEAD, BAI, CAS, STRIKE, PATROL", 10):ToAll()
+      MESSAGE:New("STRIKE: the marker need to be place in Building, PATROL: the marker need to be place in ocean", 10):ToAll()
 end    
 
 A2GMENU = MENU_COALITION_COMMAND:New(coalition.side.BLUE, "SURFACE TRAINING",nil, A2GInstructions) 
