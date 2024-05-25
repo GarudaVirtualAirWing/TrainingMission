@@ -303,8 +303,8 @@ function A2GInstructions ()
     MESSAGE:New("USE MARKERS ON F10 MAP FOR AIR-TO-GROUND TRAINING. THE FOLLOWING OPTIONS ARE AVAILABLE: SEAD, BAI, CAS, STRIKE, PATROL", 20):ToAll()
       MESSAGE:New("STRIKE: The marker needs to be placed on a building | PATROL: The marker needs to be placed in the ocean.", 10):ToAll()
       MESSAGE:New("BAI: The convoy will be driving to the nearby airbase. Find and destroy them. | CAS: The target will be close to friendly units. Eliminate the enemy!", 10):ToAll()
-      MESSAGE:New("SEAD: The SAM site will be randomized between SA-2 and SA-11.", 10):ToAll)
-      MESSAGE:New("TIPS: Place the marker on the label, write instructions in all caps, and end with an X. All instructions must be in caps.", 20):ToAll()
+      MESSAGE:New("SEAD: The SAM site will be randomized between SA-2 and SA-11.", 10):ToAll()
+      MESSAGE:New("TIPS: Place the marker on the label, write instructions in all caps, and end with an 'X'. All instructions must be in caps.", 20):ToAll()
 end    
 
 A2GMENU = MENU_COALITION_COMMAND:New(coalition.side.BLUE, "SURFACE TRAINING",nil, A2GInstructions) 
