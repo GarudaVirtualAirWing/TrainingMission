@@ -312,8 +312,8 @@ BFMACM.adversary = {
     menu = { -- Adversary menu
 		{template = "ADV_MIG21", menuText = "Adversary MIG-21"},
 		{template = "ADV_MiG28", menuText = "Adversary MiG-28"},
-		{template = "ADV_Su27", menuText = "Adversary MiG-23"},
-		{template = "ADV_MiG23", menuText = "Adversary Su-27"},
+		{template = "ADV_MiG23", menuText = "Adversary MiG-23"},
+		{template = "ADV_Su27", menuText = "Adversary Su-27"},
 		{template = "ADV_F16", menuText = "Adversary F-16"},
 		{template = "ADV_F18", menuText = "Adversary F-18"},
     },
